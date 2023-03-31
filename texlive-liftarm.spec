@@ -1,6 +1,6 @@
 Name:		texlive-liftarm
 Version:	62981
-Release:	1
+Release:	2
 Summary:	Draw liftarms
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/liftarm
