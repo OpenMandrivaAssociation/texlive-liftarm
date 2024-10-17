@@ -3,7 +3,7 @@ Version:	71309
 Release:	1
 Summary:	Draw liftarms
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/liftarm
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/liftarm
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/liftarm.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/liftarm.doc.r%{version}.tar.xz
