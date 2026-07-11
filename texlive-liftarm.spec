@@ -1,38 +1,25 @@
-Name:		texlive-liftarm
-Version:	71309
-Release:	1
-Summary:	Draw liftarms
+%global tl_name liftarm
+%global tl_revision 76924
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	4.0
+Release:	%{tl_revision}.1
+Summary:	Geometric constructions with liftarms using TikZ and LaTeX3
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/liftarm
-License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/liftarm.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/liftarm.doc.r%{version}.tar.xz
+URL:		https://www.ctan.org/tex-archive/graphics/pgf/contrib/liftarm
+License:	lppl1.3c
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/liftarm.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/liftarm.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package can be used to draw liftarms with TikZ. It
-provides several options for the appearance of the liftarms, a
-command which connects two liftarms and an environment to
-describe a construction.
+This package is based on the package TikZ and can be used to draw
+geometric constructions with liftarms. There are several options for the
+appearance of the liftarms. It provides an environment to connect
+multiple liftarms using the Newton-Raphson method and LU decomposition.
+It also provides a command to describe a construction and a method to
+animate a construction with one or more traces.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/liftarm
-%doc %{_texmfdistdir}/doc/latex/liftarm
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
